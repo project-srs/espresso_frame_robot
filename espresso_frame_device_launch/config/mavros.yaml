@@ -18,7 +18,8 @@
     - param
     - velocity_position
     - play_tune_v1
-
+    - rc_joy
+    - reboot
 /device/mavros/sys:
   ros__parameters:
     min_voltage: [15.0]

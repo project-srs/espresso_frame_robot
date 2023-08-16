@@ -1,0 +1,13 @@
+/**:
+  ros__parameters:
+    publish_tf: true
+    pan:
+      id: 1
+      min_tick: 1024
+      max_tick: 3072
+      reverse: false
+    tilt:
+      id: 2
+      min_tick: 1024
+      max_tick: 2400
+      reverse: true

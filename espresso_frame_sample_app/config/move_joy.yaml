@@ -1,0 +1,11 @@
+/**:
+  ros__parameters:
+    frame_id: base_link
+    linear:
+      x:
+        index: 1
+        scale: 0.2
+    angular:
+      z:
+        index: 3
+        scale: -1.0

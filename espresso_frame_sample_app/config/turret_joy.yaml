@@ -1,0 +1,10 @@
+/**:
+  ros__parameters:
+    frame_id: base_turret_link
+    angular:
+      y:
+        index: 2
+        scale: -0.5
+      z:
+        index: 0
+        scale: -1.0
