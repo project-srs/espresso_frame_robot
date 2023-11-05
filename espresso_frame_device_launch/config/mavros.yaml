@@ -8,18 +8,18 @@
     - "*"
     plugin_allowlist:
     - command
-    - distance_sensor
-    - global_position
-    - imu
-    - led_control
-    - rc_io
-    - setpoint_velocity
     - sys_status
+    - imu
+    - setpoint_velocity
+    - distance_sensor
     - param
+
     - velocity_position
+    - led_control
     - play_tune_v1
     - rc_joy
     - reboot
+    - setup
 /device/mavros/sys:
   ros__parameters:
     min_voltage: [15.0]
