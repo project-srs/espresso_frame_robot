@@ -1,0 +1,3 @@
+[submodule "external/srs_mavros_plugins"]
+	path = external/srs_mavros_plugins
+	url = git@github.com:project-srs/srs_mavros_plugins.git
