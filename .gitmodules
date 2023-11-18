@@ -1,3 +1,6 @@
 [submodule "external/srs_mavros_plugins"]
 	path = external/srs_mavros_plugins
 	url = git@github.com:project-srs/srs_mavros_plugins.git
+[submodule "external/srs_feetech_driver"]
+	path = external/srs_feetech_driver
+	url = git@github.com:project-srs/srs_feetech_driver.git
