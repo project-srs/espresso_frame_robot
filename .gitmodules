@@ -4,3 +4,6 @@
 [submodule "external/srs_feetech_driver"]
 	path = external/srs_feetech_driver
 	url = git@github.com:project-srs/srs_feetech_driver.git
+[submodule "external/ydlidar_ros2_driver"]
+	path = external/ydlidar_ros2_driver
+	url = git@github.com:YDLIDAR/ydlidar_ros2_driver.git
