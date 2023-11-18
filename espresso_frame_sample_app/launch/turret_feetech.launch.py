@@ -18,12 +18,12 @@ def generate_launch_description():
     return LaunchDescription([
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
-                [get_package_share_directory('espresso_frame_device_launch'), '/launch/mavros.launch.py']),
+                [get_package_share_directory('espresso_frame_bringup'), '/launch/mavros.launch.py']),
         ),
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
-                [get_package_share_directory('espresso_frame_device_launch'), '/launch/feetech_turret.launch.py']),
+                [get_package_share_directory('espresso_frame_bringup'), '/launch/feetech_turret.launch.py']),
         ),
         Node(
             package='espresso_frame_sample_app',

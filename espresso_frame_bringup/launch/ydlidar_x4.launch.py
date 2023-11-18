@@ -14,6 +14,6 @@ def generate_launch_description():
              output='screen',
              emulate_tty=True,
              parameters=[os.path.join(
-                 get_package_share_directory('espresso_frame_device_launch'), 'config', 'ydlidar_x4.yaml')],
+                 get_package_share_directory('espresso_frame_bringup'), 'config', 'ydlidar_x4.yaml')],
              )
     ])

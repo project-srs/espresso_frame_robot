@@ -18,16 +18,11 @@ import os
 def generate_launch_description():
     return LaunchDescription([
         Node(
-            package='srs_feetech_driver',
-            executable='pan_tilt_node',
-            namespace='/device/head_turret',
+            package='mavros',
+            executable='mavros_node',
+            namespace='/device/mavros',
             parameters=[os.path.join(get_package_share_directory(
-                'espresso_frame_device_launch'), 'config', 'feetech_turret.yaml')],
+                'espresso_frame_bringup'), 'config', 'mavros.yaml')],
             emulate_tty=True,
-        ),
-        Node(
-            package='srs_feetech_driver',
-            executable='joy_to_cmd_rate',
-            namespace='/device/head_turret',
         ),
     ])

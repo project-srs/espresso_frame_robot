@@ -15,7 +15,7 @@ def generate_launch_description():
             name='realsense_node',
             executable='realsense2_camera_node',
             parameters=[os.path.join(get_package_share_directory(
-                'espresso_frame_device_launch'), 'config', 'realsense.yaml')],
+                'espresso_frame_bringup'), 'config', 'realsense.yaml')],
             emulate_tty=True,
             output='screen',
         ),

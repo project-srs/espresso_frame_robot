@@ -22,19 +22,19 @@ def generate_launch_description():
         ),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
-                [get_package_share_directory('espresso_frame_device_launch'), '/launch/mavros.launch.py']),
+                [get_package_share_directory('espresso_frame_bringup'), '/launch/mavros.launch.py']),
         ),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
-                [get_package_share_directory('espresso_frame_device_launch'), '/launch/feetech_turret.launch.py']),
+                [get_package_share_directory('espresso_frame_bringup'), '/launch/feetech_turret.launch.py']),
         ),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
-                [get_package_share_directory('espresso_frame_device_launch'), '/launch/realsense.launch.py']),
+                [get_package_share_directory('espresso_frame_bringup'), '/launch/realsense.launch.py']),
         ),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
-                [get_package_share_directory('espresso_frame_device_launch'), '/launch/ydlidar_x4.launch.py']),
+                [get_package_share_directory('espresso_frame_bringup'), '/launch/ydlidar_x4.launch.py']),
         ),
         Node(
             package='robot_state_publisher',
@@ -43,7 +43,7 @@ def generate_launch_description():
             condition=IfCondition(LaunchConfiguration('sample_app'))
         ),
         Node(
-            package='espresso_frame_device_launch',
+            package='espresso_frame_bringup',
             executable='sample_app.py',
             namespace='/app',
             condition=IfCondition(LaunchConfiguration('sample_app'))
