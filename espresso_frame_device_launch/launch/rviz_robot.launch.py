@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
 from launch.actions import IncludeLaunchDescription
@@ -12,22 +10,23 @@ from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
 from ament_index_python.packages import get_package_share_directory
 from ament_index_python.packages import get_package_share_path
+from launch.actions import TimerAction
 import os
 
 
 def generate_launch_description():
     return LaunchDescription([
-        Node(
-            package='srs_feetech_driver',
-            executable='pan_tilt_node',
-            namespace='/device/head_turret',
-            parameters=[os.path.join(get_package_share_directory(
-                'espresso_frame_device_launch'), 'config', 'feetech_turret.yaml')],
-            emulate_tty=True,
+        DeclareLaunchArgument(
+            'delay', default_value='0.0'
         ),
-        Node(
-            package='srs_feetech_driver',
-            executable='joy_to_cmd_rate',
-            namespace='/device/head_turret',
-        ),
+        TimerAction(period=LaunchConfiguration('delay'),
+            actions=[
+                Node(
+                    package='rviz2',
+                    executable='rviz2',
+                    name='rviz2',
+                    output='screen',
+                    arguments=['-d', str(get_package_share_path('espresso_frame_device_launch') / 'rviz/robot.rviz')],
+                ),
+            ]),
     ])
