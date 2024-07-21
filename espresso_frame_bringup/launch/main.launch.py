@@ -36,6 +36,10 @@ def generate_launch_description():
             PythonLaunchDescriptionSource(
                 [get_package_share_directory('espresso_frame_bringup'), '/launch/ydlidar_x4.launch.py']),
         ),
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(
+                [get_package_share_directory('espresso_frame_bringup'), '/launch/webcam.launch.py']),
+        ),
         Node(
             package='robot_state_publisher',
             executable='robot_state_publisher',
