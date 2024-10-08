@@ -37,8 +37,8 @@ class SampleApp(Node):
             req.data = True
             self.mode_future = self.mode_client.call_async(req)
 
-      if 4 <= len(msg.axes):
-         target_velocity_x = 0.5 * msg.axes[1]
+      if 6 <= len(msg.axes):
+         target_velocity_x = 0.5 * msg.axes[4]
          rate = 0.1
          velocity_x = rate * target_velocity_x + (1 - rate) * self.last_velocity_x
          self.last_velocity_x = velocity_x
@@ -47,15 +47,15 @@ class SampleApp(Node):
          twist.header.frame_id = 'base_link'
          twist.header.stamp = msg.header.stamp
          twist.twist.linear.x = velocity_x
-         twist.twist.angular.z = -1.5 * msg.axes[3]
+         twist.twist.angular.z = 1.5 * msg.axes[3]
          self.move_twist_pub.publish(twist)
 
       if 4 <= len(msg.axes):
          twist = TwistStamped()
          twist.header.frame_id = 'base_turret_link'
          twist.header.stamp = msg.header.stamp
-         twist.twist.angular.y = -1.0 * msg.axes[2]
-         twist.twist.angular.z = -1.0 * msg.axes[0]
+         twist.twist.angular.y = -1.0 * msg.axes[1]
+         twist.twist.angular.z = 1.0 * msg.axes[0]
          self.turret_twist_pub.publish(twist)
 
       self.last_joy = msg

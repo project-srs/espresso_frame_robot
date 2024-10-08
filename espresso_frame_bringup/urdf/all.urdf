@@ -22,7 +22,7 @@
   <link name="head_camera_link"/>
 
   <joint name="front_laser_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.141 0 0"/>
+    <origin rpy="0 0 3.141592" xyz="0.140 0 0"/>
     <parent link="base_link"/>
     <child  link="front_laser_link"/>
   </joint>

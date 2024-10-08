@@ -17,7 +17,7 @@ install(PROGRAMS scripts/sample_app.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY launch config rviz
+install(DIRECTORY launch config rviz urdf
   DESTINATION share/${PROJECT_NAME}/
 )
 

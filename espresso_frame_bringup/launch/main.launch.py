@@ -34,7 +34,7 @@ def generate_launch_description():
         ),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
-                [get_package_share_directory('espresso_frame_bringup'), '/launch/ydlidar_x4.launch.py']),
+                [get_package_share_directory('espresso_frame_bringup'), '/launch/ld19.launch.py']),
         ),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
@@ -43,7 +43,7 @@ def generate_launch_description():
         Node(
             package='robot_state_publisher',
             executable='robot_state_publisher',
-            parameters=[{'robot_description': ParameterValue(Command(['xacro ', str(get_package_share_path('espresso_frame_sample_app')) + '/urdf/all.urdf']))}],
+            parameters=[{'robot_description': ParameterValue(Command(['xacro ', str(get_package_share_path('espresso_frame_bringup')) + '/urdf/all.urdf']))}],
             condition=IfCondition(LaunchConfiguration('sample_app'))
         ),
         Node(
