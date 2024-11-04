@@ -43,8 +43,7 @@ def generate_launch_description():
         Node(
             package='robot_state_publisher',
             executable='robot_state_publisher',
-            parameters=[{'robot_description': ParameterValue(Command(['xacro ', str(get_package_share_path('espresso_frame_bringup')) + '/urdf/all.urdf']))}],
-            condition=IfCondition(LaunchConfiguration('sample_app'))
+            parameters=[{'robot_description': ParameterValue(Command(['xacro ', str(get_package_share_path('espresso_frame_bringup')) + '/urdf/all.urdf']))}]
         ),
         Node(
             package='espresso_frame_bringup',
