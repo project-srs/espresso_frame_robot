@@ -11,8 +11,8 @@ def generate_launch_description():
     return LaunchDescription([
         launch_ros.actions.Node(
             package='realsense2_camera',
-            namespace='/device/head_camera',
-            name='realsense_node',
+            namespace='/device',
+            name='head_camera',
             executable='realsense2_camera_node',
             parameters=[os.path.join(get_package_share_directory(
                 'espresso_frame_bringup'), 'config', 'realsense.yaml')],
