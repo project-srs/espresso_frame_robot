@@ -1,5 +1,7 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
+import os
+from ament_index_python.packages import get_package_share_path
 
 def generate_launch_description():
   return LaunchDescription([
@@ -20,5 +22,11 @@ def generate_launch_description():
         {'angle_crop_min': 135.0},
         {'angle_crop_max': 225.0}
       ]
+    ),
+    Node(
+        package="laser_filters",
+        executable="scan_to_scan_filter_chain",
+        namespace='/device/front_laser',
+        parameters=[os.path.join(get_package_share_path("s7_vehicle_launch"), "config", "front_laser_filter.yaml")],
     )
   ])
