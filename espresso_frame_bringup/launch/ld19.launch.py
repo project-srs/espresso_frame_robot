@@ -27,6 +27,6 @@ def generate_launch_description():
         package="laser_filters",
         executable="scan_to_scan_filter_chain",
         namespace='/device/front_laser',
-        parameters=[os.path.join(get_package_share_path("s7_vehicle_launch"), "config", "front_laser_filter.yaml")],
+        parameters=[os.path.join(get_package_share_path("espresso_frame_bringup"), "config", "front_laser_filter.yaml")],
     )
   ])

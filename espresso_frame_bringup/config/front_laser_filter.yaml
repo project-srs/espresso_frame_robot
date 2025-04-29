@@ -1,17 +1,18 @@
 /**:
   ros__parameters:
     filter1:
-      name: box_filter
-      type: laser_filters/LaserScanBoxFilter
+      name: angle1
+      type: laser_filters/LaserScanAngularBoundsFilterInPlace
       params:
-        box_frame: base_link
-        max_x: 0.1
-        max_y: 0.22
-        max_z: 0.5
-        min_x: -0.22
-        min_y: -0.22
-        min_z: -0.5
+        lower_angle: 0.0
+        upper_angle: 1.4
     filter2:
+      name: angle2
+      type: laser_filters/LaserScanAngularBoundsFilterInPlace
+      params:
+        lower_angle: 4.8830
+        upper_angle: 6.2830
+    filter3:
       name: range_filter
       type: laser_filters/LaserScanRangeFilter
       params:
@@ -20,4 +21,15 @@
         upper_threshold: 10.0              # if not specified defaults to 100000.0
         lower_replacement_value: nan    # if not specified defaults to NaN
         upper_replacement_value: nan     # if not specified defaults to NaN
+    # filter1:
+    #   name: box_filter
+    #   type: laser_filters/LaserScanBoxFilter
+    #   params:
+    #     box_frame: base_link
+    #     max_x: 0.1
+    #     max_y: 0.22
+    #     max_z: 0.5
+    #     min_x: -0.22
+    #     min_y: -0.22
+    #     min_z: -0.5
 
